@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:16
+    container_name: student_bi_pg
+    environment:
+      POSTGRES_USER: bi_user
+      POSTGRES_PASSWORD: bi_pass
+      POSTGRES_DB: student_bi
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
